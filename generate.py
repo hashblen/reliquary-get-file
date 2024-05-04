@@ -31,7 +31,7 @@ header = ("""use std::any::Any;\n"""
           """use reliquary::network::GameCommand;\n"""
           """use reliquary::network::gen::command_id;\n\n""")
  
-function_header = ("""pub fn command_id_to_struct(command: GameCommand) -> Option<protobuf::Result<dyn Any>> {\n"""
+function_header = ("""\npub fn command_id_to_struct(command: GameCommand) -> Option<protobuf::Result<dyn Any>> {\n"""
                    """    match command.command_id {\n""")
  
 function_footer = ("""        _ => None\n"""
