@@ -27,11 +27,11 @@ for c in [f for f in os.listdir(proto_folder_path) if os.path.isfile(os.path.joi
     if command_name in command_ids:
         commands.append(command_name)
     
-header = ("""use std::any::Any;\n"""
-          """use reliquary::network::GameCommand;\n"""
-          """use reliquary::network::gen::command_id;\n\n""")
+header = ("""use reliquary::network::GameCommand;\n"""
+          """use reliquary::network::gen::command_id;\n"""
+          """use tracing::warn;\n\n""")
  
-function_header = ("""\npub fn command_id_to_struct(command: GameCommand) -> Option<protobuf::Result<dyn Any>> {\n"""
+function_header = ("""\npub fn print_command(command: GameCommand) {\n"""
                    """    match command.command_id {\n""")
  
 function_footer = ("""        _ => None\n"""
@@ -46,7 +46,14 @@ for c in commands:
     function_inner += (
         f"""        command_id::{c} => {{\n"""
         f"""            let cmd = command.parse_proto::<{c}>();\n"""
-        """            Some(cmd)\n"""
+        """            match cmd {\n"""
+        """                Ok(cmd) => {\n"""
+        """                    println!("{:?}", cmd);\n"""
+        """                }\n"""
+        """                Err(error) => {\n"""
+        """                    warn!(%error, "could not parse token command");\n"""
+        """                }\n"""
+        """            }\n"""
         """        }\n"""
     )
  

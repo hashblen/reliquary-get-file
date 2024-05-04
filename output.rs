@@ -1,6 +1,7 @@
 use std::any::Any;
 use reliquary::network::GameCommand;
 use reliquary::network::gen::command_id;
+use tracing::warn;
 
 use reliquary::network::gen::proto::ActivateFarmElementCsReq::ActivateFarmElementCsReq;
 use reliquary::network::gen::proto::ActivateFarmElementScRsp::ActivateFarmElementScRsp;
@@ -257,1027 +258,2813 @@ use reliquary::network::gen::proto::UpdateServerPrefsDataCsReq::UpdateServerPref
 use reliquary::network::gen::proto::UpdateServerPrefsDataScRsp::UpdateServerPrefsDataScRsp;
 use reliquary::network::gen::proto::UseItemCsReq::UseItemCsReq;
 use reliquary::network::gen::proto::UseItemScRsp::UseItemScRsp;
-pub fn command_id_to_struct(command: GameCommand) -> Option<protobuf::Result<dyn Any>> {
+
+pub fn print_command(command: GameCommand) {
     match command.command_id {
         command_id::ActivateFarmElementCsReq => {
             let cmd = command.parse_proto::<ActivateFarmElementCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ActivateFarmElementScRsp => {
             let cmd = command.parse_proto::<ActivateFarmElementScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ApplyFriendCsReq => {
             let cmd = command.parse_proto::<ApplyFriendCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::AvatarExpUpCsReq => {
             let cmd = command.parse_proto::<AvatarExpUpCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::AvatarExpUpScRsp => {
             let cmd = command.parse_proto::<AvatarExpUpScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::BattlePassInfoNotify => {
             let cmd = command.parse_proto::<BattlePassInfoNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::BuyGoodsCsReq => {
             let cmd = command.parse_proto::<BuyGoodsCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::BuyGoodsScRsp => {
             let cmd = command.parse_proto::<BuyGoodsScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChallengeLineupNotify => {
             let cmd = command.parse_proto::<ChallengeLineupNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChallengeSettleNotify => {
             let cmd = command.parse_proto::<ChallengeSettleNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChangeLineupLeaderCsReq => {
             let cmd = command.parse_proto::<ChangeLineupLeaderCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChangeLineupLeaderScRsp => {
             let cmd = command.parse_proto::<ChangeLineupLeaderScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueCellUpdateNotify => {
             let cmd = command.parse_proto::<ChessRogueCellUpdateNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueConfirmRollScRsp => {
             let cmd = command.parse_proto::<ChessRogueConfirmRollScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueNousEditDiceCsReq => {
             let cmd = command.parse_proto::<ChessRogueNousEditDiceCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueNousEditDiceScRsp => {
             let cmd = command.parse_proto::<ChessRogueNousEditDiceScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueReRollDiceCsReq => {
             let cmd = command.parse_proto::<ChessRogueReRollDiceCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueRollDiceCsReq => {
             let cmd = command.parse_proto::<ChessRogueRollDiceCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueRollDiceScRsp => {
             let cmd = command.parse_proto::<ChessRogueRollDiceScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueSelectCellCsReq => {
             let cmd = command.parse_proto::<ChessRogueSelectCellCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueSelectCellScRsp => {
             let cmd = command.parse_proto::<ChessRogueSelectCellScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueStartCsReq => {
             let cmd = command.parse_proto::<ChessRogueStartCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueStartScRsp => {
             let cmd = command.parse_proto::<ChessRogueStartScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueUpdateActionPointScNotify => {
             let cmd = command.parse_proto::<ChessRogueUpdateActionPointScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueUpdateAllowedSelectCellScNotify => {
             let cmd = command.parse_proto::<ChessRogueUpdateAllowedSelectCellScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueUpdateDiceInfoScNotify => {
             let cmd = command.parse_proto::<ChessRogueUpdateDiceInfoScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueUpdateDicePassiveAccumulateValueScNotify => {
             let cmd = command.parse_proto::<ChessRogueUpdateDicePassiveAccumulateValueScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ChessRogueUpdateMoneyInfoScNotify => {
             let cmd = command.parse_proto::<ChessRogueUpdateMoneyInfoScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ComposeItemCsReq => {
             let cmd = command.parse_proto::<ComposeItemCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ComposeItemScRsp => {
             let cmd = command.parse_proto::<ComposeItemScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ComposeSelectedRelicCsReq => {
             let cmd = command.parse_proto::<ComposeSelectedRelicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ComposeSelectedRelicScRsp => {
             let cmd = command.parse_proto::<ComposeSelectedRelicScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DailyActiveInfoNotify => {
             let cmd = command.parse_proto::<DailyActiveInfoNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DeactivateFarmElementCsReq => {
             let cmd = command.parse_proto::<DeactivateFarmElementCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DeactivateFarmElementScRsp => {
             let cmd = command.parse_proto::<DeactivateFarmElementScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DeleteFriendCsReq => {
             let cmd = command.parse_proto::<DeleteFriendCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DelMailCsReq => {
             let cmd = command.parse_proto::<DelMailCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DelMailScRsp => {
             let cmd = command.parse_proto::<DelMailScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DeployRotaterCsReq => {
             let cmd = command.parse_proto::<DeployRotaterCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DeployRotaterScRsp => {
             let cmd = command.parse_proto::<DeployRotaterScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DiscardRelicCsReq => {
             let cmd = command.parse_proto::<DiscardRelicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DoGachaCsReq => {
             let cmd = command.parse_proto::<DoGachaCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DoGachaInRollShopCsReq => {
             let cmd = command.parse_proto::<DoGachaInRollShopCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DoGachaInRollShopScRsp => {
             let cmd = command.parse_proto::<DoGachaInRollShopScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DoGachaScRsp => {
             let cmd = command.parse_proto::<DoGachaScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DressAvatarCsReq => {
             let cmd = command.parse_proto::<DressAvatarCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::DressRelicAvatarCsReq => {
             let cmd = command.parse_proto::<DressRelicAvatarCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnableRogueTalentCsReq => {
             let cmd = command.parse_proto::<EnableRogueTalentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnableRogueTalentScRsp => {
             let cmd = command.parse_proto::<EnableRogueTalentScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnhanceRogueBuffCsReq => {
             let cmd = command.parse_proto::<EnhanceRogueBuffCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnhanceRogueBuffScRsp => {
             let cmd = command.parse_proto::<EnhanceRogueBuffScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnterMapRotationRegionCsReq => {
             let cmd = command.parse_proto::<EnterMapRotationRegionCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnterMapRotationRegionScRsp => {
             let cmd = command.parse_proto::<EnterMapRotationRegionScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnterRogueMapRoomCsReq => {
             let cmd = command.parse_proto::<EnterRogueMapRoomCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnterRogueMapRoomScRsp => {
             let cmd = command.parse_proto::<EnterRogueMapRoomScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnterSceneByServerScNotify => {
             let cmd = command.parse_proto::<EnterSceneByServerScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::EnterSceneCsReq => {
             let cmd = command.parse_proto::<EnterSceneCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExchangeGachaCeilingCsReq => {
             let cmd = command.parse_proto::<ExchangeGachaCeilingCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExchangeGachaCeilingScRsp => {
             let cmd = command.parse_proto::<ExchangeGachaCeilingScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExchangeHcoinCsReq => {
             let cmd = command.parse_proto::<ExchangeHcoinCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExchangeHcoinScRsp => {
             let cmd = command.parse_proto::<ExchangeHcoinScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExpUpEquipmentCsReq => {
             let cmd = command.parse_proto::<ExpUpEquipmentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExpUpEquipmentScRsp => {
             let cmd = command.parse_proto::<ExpUpEquipmentScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExpUpRelicCsReq => {
             let cmd = command.parse_proto::<ExpUpRelicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ExpUpRelicScRsp => {
             let cmd = command.parse_proto::<ExpUpRelicScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::FinishRogueDialogueGroupCsReq => {
             let cmd = command.parse_proto::<FinishRogueDialogueGroupCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetActivityScheduleConfigScRsp => {
             let cmd = command.parse_proto::<GetActivityScheduleConfigScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetAllLineupDataScRsp => {
             let cmd = command.parse_proto::<GetAllLineupDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetArchiveDataScRsp => {
             let cmd = command.parse_proto::<GetArchiveDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetAvatarDataCsReq => {
             let cmd = command.parse_proto::<GetAvatarDataCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetAvatarDataScRsp => {
             let cmd = command.parse_proto::<GetAvatarDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetBagScRsp => {
             let cmd = command.parse_proto::<GetBagScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetBasicInfoScRsp => {
             let cmd = command.parse_proto::<GetBasicInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetChallengeScRsp => {
             let cmd = command.parse_proto::<GetChallengeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetChessRogueNousStoryInfoScRsp => {
             let cmd = command.parse_proto::<GetChessRogueNousStoryInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetCurChallengeScRsp => {
             let cmd = command.parse_proto::<GetCurChallengeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetCurLineupDataScRsp => {
             let cmd = command.parse_proto::<GetCurLineupDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetCurSceneInfoScRsp => {
             let cmd = command.parse_proto::<GetCurSceneInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetDailyActiveInfoCsReq => {
             let cmd = command.parse_proto::<GetDailyActiveInfoCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetDailyActiveInfoScRsp => {
             let cmd = command.parse_proto::<GetDailyActiveInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetEnteredSceneScRsp => {
             let cmd = command.parse_proto::<GetEnteredSceneScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFarmStageGachaInfoCsReq => {
             let cmd = command.parse_proto::<GetFarmStageGachaInfoCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFarmStageGachaInfoScRsp => {
             let cmd = command.parse_proto::<GetFarmStageGachaInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFirstTalkByPerformanceNpcCsReq => {
             let cmd = command.parse_proto::<GetFirstTalkByPerformanceNpcCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFirstTalkByPerformanceNpcScRsp => {
             let cmd = command.parse_proto::<GetFirstTalkByPerformanceNpcScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFirstTalkNpcCsReq => {
             let cmd = command.parse_proto::<GetFirstTalkNpcCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFirstTalkNpcScRsp => {
             let cmd = command.parse_proto::<GetFirstTalkNpcScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFriendApplyListInfoScRsp => {
             let cmd = command.parse_proto::<GetFriendApplyListInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFriendListInfoScRsp => {
             let cmd = command.parse_proto::<GetFriendListInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFriendLoginInfoScRsp => {
             let cmd = command.parse_proto::<GetFriendLoginInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetFriendRecommendListInfoScRsp => {
             let cmd = command.parse_proto::<GetFriendRecommendListInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetGachaCeilingCsReq => {
             let cmd = command.parse_proto::<GetGachaCeilingCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetGachaCeilingScRsp => {
             let cmd = command.parse_proto::<GetGachaCeilingScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetGachaInfoScRsp => {
             let cmd = command.parse_proto::<GetGachaInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetHeroBasicTypeInfoScRsp => {
             let cmd = command.parse_proto::<GetHeroBasicTypeInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetJukeboxDataCsReq => {
             let cmd = command.parse_proto::<GetJukeboxDataCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetJukeboxDataScRsp => {
             let cmd = command.parse_proto::<GetJukeboxDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetMailScRsp => {
             let cmd = command.parse_proto::<GetMailScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetMissionStatusCsReq => {
             let cmd = command.parse_proto::<GetMissionStatusCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetMissionStatusScRsp => {
             let cmd = command.parse_proto::<GetMissionStatusScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetNpcTakenRewardCsReq => {
             let cmd = command.parse_proto::<GetNpcTakenRewardCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetNpcTakenRewardScRsp => {
             let cmd = command.parse_proto::<GetNpcTakenRewardScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPhoneDataCsReq => {
             let cmd = command.parse_proto::<GetPhoneDataCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPhoneDataScRsp => {
             let cmd = command.parse_proto::<GetPhoneDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPlayerBoardDataScRsp => {
             let cmd = command.parse_proto::<GetPlayerBoardDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPlayerDetailInfoCsReq => {
             let cmd = command.parse_proto::<GetPlayerDetailInfoCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPlayerDetailInfoScRsp => {
             let cmd = command.parse_proto::<GetPlayerDetailInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPrivateChatHistoryCsReq => {
             let cmd = command.parse_proto::<GetPrivateChatHistoryCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetPrivateChatHistoryScRsp => {
             let cmd = command.parse_proto::<GetPrivateChatHistoryScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetQuestDataCsReq => {
             let cmd = command.parse_proto::<GetQuestDataCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetQuestDataScRsp => {
             let cmd = command.parse_proto::<GetQuestDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRogueBuffEnhanceInfoScRsp => {
             let cmd = command.parse_proto::<GetRogueBuffEnhanceInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRogueHandbookDataScRsp => {
             let cmd = command.parse_proto::<GetRogueHandbookDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRogueInfoScRsp => {
             let cmd = command.parse_proto::<GetRogueInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRogueInitialScoreScRsp => {
             let cmd = command.parse_proto::<GetRogueInitialScoreScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRogueScoreRewardInfoScRsp => {
             let cmd = command.parse_proto::<GetRogueScoreRewardInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRogueTalentInfoScRsp => {
             let cmd = command.parse_proto::<GetRogueTalentInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRollShopInfoCsReq => {
             let cmd = command.parse_proto::<GetRollShopInfoCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetRollShopInfoScRsp => {
             let cmd = command.parse_proto::<GetRollShopInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetSceneMapInfoCsReq => {
             let cmd = command.parse_proto::<GetSceneMapInfoCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetSceneMapInfoScRsp => {
             let cmd = command.parse_proto::<GetSceneMapInfoScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetShopListCsReq => {
             let cmd = command.parse_proto::<GetShopListCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetShopListScRsp => {
             let cmd = command.parse_proto::<GetShopListScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetUnlockTeleportCsReq => {
             let cmd = command.parse_proto::<GetUnlockTeleportCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GetUnlockTeleportScRsp => {
             let cmd = command.parse_proto::<GetUnlockTeleportScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GroupStateChangeCsReq => {
             let cmd = command.parse_proto::<GroupStateChangeCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GroupStateChangeScNotify => {
             let cmd = command.parse_proto::<GroupStateChangeScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::GroupStateChangeScRsp => {
             let cmd = command.parse_proto::<GroupStateChangeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::HandleFriendCsReq => {
             let cmd = command.parse_proto::<HandleFriendCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::HandleFriendScRsp => {
             let cmd = command.parse_proto::<HandleFriendScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::HandleRogueCommonPendingActionCsReq => {
             let cmd = command.parse_proto::<HandleRogueCommonPendingActionCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::HandleRogueCommonPendingActionScRsp => {
             let cmd = command.parse_proto::<HandleRogueCommonPendingActionScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::InteractChargerCsReq => {
             let cmd = command.parse_proto::<InteractChargerCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::InteractChargerScRsp => {
             let cmd = command.parse_proto::<InteractChargerScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::InteractPropCsReq => {
             let cmd = command.parse_proto::<InteractPropCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::InteractPropScRsp => {
             let cmd = command.parse_proto::<InteractPropScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::JoinLineupCsReq => {
             let cmd = command.parse_proto::<JoinLineupCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::LeaveRogueScRsp => {
             let cmd = command.parse_proto::<LeaveRogueScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::LockEquipmentCsReq => {
             let cmd = command.parse_proto::<LockEquipmentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::LockEquipmentScRsp => {
             let cmd = command.parse_proto::<LockEquipmentScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::LockRelicCsReq => {
             let cmd = command.parse_proto::<LockRelicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::LockRelicScRsp => {
             let cmd = command.parse_proto::<LockRelicScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::MarkReadMailCsReq => {
             let cmd = command.parse_proto::<MarkReadMailCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::MarkReadMailScRsp => {
             let cmd = command.parse_proto::<MarkReadMailScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::NewMailScNotify => {
             let cmd = command.parse_proto::<NewMailScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PickRogueAvatarCsReq => {
             let cmd = command.parse_proto::<PickRogueAvatarCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PickRogueAvatarScRsp => {
             let cmd = command.parse_proto::<PickRogueAvatarScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PlayBackGroundMusicCsReq => {
             let cmd = command.parse_proto::<PlayBackGroundMusicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PlayBackGroundMusicScRsp => {
             let cmd = command.parse_proto::<PlayBackGroundMusicScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PlayerGetTokenCsReq => {
             let cmd = command.parse_proto::<PlayerGetTokenCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PlayerGetTokenScRsp => {
             let cmd = command.parse_proto::<PlayerGetTokenScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PlayerLoginScRsp => {
             let cmd = command.parse_proto::<PlayerLoginScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PlayerSyncScNotify => {
             let cmd = command.parse_proto::<PlayerSyncScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PromoteAvatarCsReq => {
             let cmd = command.parse_proto::<PromoteAvatarCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PromoteEquipmentCsReq => {
             let cmd = command.parse_proto::<PromoteEquipmentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PVEBattleResultCsReq => {
             let cmd = command.parse_proto::<PVEBattleResultCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::PVEBattleResultScRsp => {
             let cmd = command.parse_proto::<PVEBattleResultScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::QuitLineupCsReq => {
             let cmd = command.parse_proto::<QuitLineupCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RankUpAvatarCsReq => {
             let cmd = command.parse_proto::<RankUpAvatarCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RankUpEquipmentCsReq => {
             let cmd = command.parse_proto::<RankUpEquipmentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ReEnterLastElementStageCsReq => {
             let cmd = command.parse_proto::<ReEnterLastElementStageCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ReEnterLastElementStageScRsp => {
             let cmd = command.parse_proto::<ReEnterLastElementStageScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RefreshTriggerByClientCsReq => {
             let cmd = command.parse_proto::<RefreshTriggerByClientCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RefreshTriggerByClientScNotify => {
             let cmd = command.parse_proto::<RefreshTriggerByClientScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RefreshTriggerByClientScRsp => {
             let cmd = command.parse_proto::<RefreshTriggerByClientScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ReplaceLineupCsReq => {
             let cmd = command.parse_proto::<ReplaceLineupCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ReserveStaminaExchangeCsReq => {
             let cmd = command.parse_proto::<ReserveStaminaExchangeCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ReserveStaminaExchangeScRsp => {
             let cmd = command.parse_proto::<ReserveStaminaExchangeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RevcMsgScNotify => {
             let cmd = command.parse_proto::<RevcMsgScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RogueNpcDisappearCsReq => {
             let cmd = command.parse_proto::<RogueNpcDisappearCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RotateMapCsReq => {
             let cmd = command.parse_proto::<RotateMapCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::RotateMapScRsp => {
             let cmd = command.parse_proto::<RotateMapScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneCastSkillCsReq => {
             let cmd = command.parse_proto::<SceneCastSkillCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneCastSkillMpUpdateScNotify => {
             let cmd = command.parse_proto::<SceneCastSkillMpUpdateScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneCastSkillScRsp => {
             let cmd = command.parse_proto::<SceneCastSkillScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneEnterStageCsReq => {
             let cmd = command.parse_proto::<SceneEnterStageCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneEnterStageScRsp => {
             let cmd = command.parse_proto::<SceneEnterStageScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneEntityMoveCsReq => {
             let cmd = command.parse_proto::<SceneEntityMoveCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneEntityMoveScNotify => {
             let cmd = command.parse_proto::<SceneEntityMoveScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneEntityTeleportCsReq => {
             let cmd = command.parse_proto::<SceneEntityTeleportCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneEntityTeleportScRsp => {
             let cmd = command.parse_proto::<SceneEntityTeleportScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SceneGroupRefreshScNotify => {
             let cmd = command.parse_proto::<SceneGroupRefreshScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::ScenePlaneEventScNotify => {
             let cmd = command.parse_proto::<ScenePlaneEventScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SearchPlayerCsReq => {
             let cmd = command.parse_proto::<SearchPlayerCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SearchPlayerScRsp => {
             let cmd = command.parse_proto::<SearchPlayerScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SelectChatBubbleCsReq => {
             let cmd = command.parse_proto::<SelectChatBubbleCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SelectChatBubbleScRsp => {
             let cmd = command.parse_proto::<SelectChatBubbleScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SelectPhoneThemeCsReq => {
             let cmd = command.parse_proto::<SelectPhoneThemeCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SelectPhoneThemeScRsp => {
             let cmd = command.parse_proto::<SelectPhoneThemeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SelectRogueDialogueEventCsReq => {
             let cmd = command.parse_proto::<SelectRogueDialogueEventCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SelectRogueDialogueEventScRsp => {
             let cmd = command.parse_proto::<SelectRogueDialogueEventScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SellItemCsReq => {
             let cmd = command.parse_proto::<SellItemCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SellItemScRsp => {
             let cmd = command.parse_proto::<SellItemScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SendMsgCsReq => {
             let cmd = command.parse_proto::<SendMsgCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetClientPausedCsReq => {
             let cmd = command.parse_proto::<SetClientPausedCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetClientPausedScRsp => {
             let cmd = command.parse_proto::<SetClientPausedScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetFriendMarkCsReq => {
             let cmd = command.parse_proto::<SetFriendMarkCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetFriendMarkScRsp => {
             let cmd = command.parse_proto::<SetFriendMarkScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetGameplayBirthdayCsReq => {
             let cmd = command.parse_proto::<SetGameplayBirthdayCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetGameplayBirthdayScRsp => {
             let cmd = command.parse_proto::<SetGameplayBirthdayScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetHeadIconCsReq => {
             let cmd = command.parse_proto::<SetHeadIconCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetHeadIconScRsp => {
             let cmd = command.parse_proto::<SetHeadIconScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetHeroBasicTypeCsReq => {
             let cmd = command.parse_proto::<SetHeroBasicTypeCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetHeroBasicTypeScRsp => {
             let cmd = command.parse_proto::<SetHeroBasicTypeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetLineupNameCsReq => {
             let cmd = command.parse_proto::<SetLineupNameCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetLineupNameScRsp => {
             let cmd = command.parse_proto::<SetLineupNameScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetNicknameCsReq => {
             let cmd = command.parse_proto::<SetNicknameCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetSignatureCsReq => {
             let cmd = command.parse_proto::<SetSignatureCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SetSignatureScRsp => {
             let cmd = command.parse_proto::<SetSignatureScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StaminaInfoScNotify => {
             let cmd = command.parse_proto::<StaminaInfoScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StartChallengeCsReq => {
             let cmd = command.parse_proto::<StartChallengeCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StartChallengeScRsp => {
             let cmd = command.parse_proto::<StartChallengeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StartCocoonStageCsReq => {
             let cmd = command.parse_proto::<StartCocoonStageCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StartCocoonStageScRsp => {
             let cmd = command.parse_proto::<StartCocoonStageScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StartRogueCsReq => {
             let cmd = command.parse_proto::<StartRogueCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::StartRogueScRsp => {
             let cmd = command.parse_proto::<StartRogueScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SwapLineupCsReq => {
             let cmd = command.parse_proto::<SwapLineupCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SwitchLineupIndexCsReq => {
             let cmd = command.parse_proto::<SwitchLineupIndexCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SwitchLineupIndexScRsp => {
             let cmd = command.parse_proto::<SwitchLineupIndexScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncApplyFriendScNotify => {
             let cmd = command.parse_proto::<SyncApplyFriendScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncChessRogueNousValueScNotify => {
             let cmd = command.parse_proto::<SyncChessRogueNousValueScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncClientResVersionCsReq => {
             let cmd = command.parse_proto::<SyncClientResVersionCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncClientResVersionScRsp => {
             let cmd = command.parse_proto::<SyncClientResVersionScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncDeleteFriendScNotify => {
             let cmd = command.parse_proto::<SyncDeleteFriendScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncEntityBuffChangeListScNotify => {
             let cmd = command.parse_proto::<SyncEntityBuffChangeListScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncHandleFriendScNotify => {
             let cmd = command.parse_proto::<SyncHandleFriendScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncLineupNotify => {
             let cmd = command.parse_proto::<SyncLineupNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueCommonActionResultScNotify => {
             let cmd = command.parse_proto::<SyncRogueCommonActionResultScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueCommonPendingActionScNotify => {
             let cmd = command.parse_proto::<SyncRogueCommonPendingActionScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueDialogueEventDataScNotify => {
             let cmd = command.parse_proto::<SyncRogueDialogueEventDataScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueFinishScNotify => {
             let cmd = command.parse_proto::<SyncRogueFinishScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueMapRoomScNotify => {
             let cmd = command.parse_proto::<SyncRogueMapRoomScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueStatusScNotify => {
             let cmd = command.parse_proto::<SyncRogueStatusScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::SyncRogueVirtualItemInfoScNotify => {
             let cmd = command.parse_proto::<SyncRogueVirtualItemInfoScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakeChallengeRewardCsReq => {
             let cmd = command.parse_proto::<TakeChallengeRewardCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakeChallengeRewardScRsp => {
             let cmd = command.parse_proto::<TakeChallengeRewardScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakeMailAttachmentCsReq => {
             let cmd = command.parse_proto::<TakeMailAttachmentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakeMailAttachmentScRsp => {
             let cmd = command.parse_proto::<TakeMailAttachmentScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakeOffEquipmentCsReq => {
             let cmd = command.parse_proto::<TakeOffEquipmentCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakeOffRelicCsReq => {
             let cmd = command.parse_proto::<TakeOffRelicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakePromotionRewardCsReq => {
             let cmd = command.parse_proto::<TakePromotionRewardCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TakePromotionRewardScRsp => {
             let cmd = command.parse_proto::<TakePromotionRewardScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TextJoinQueryCsReq => {
             let cmd = command.parse_proto::<TextJoinQueryCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::TextJoinQueryScRsp => {
             let cmd = command.parse_proto::<TextJoinQueryScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UnlockBackGroundMusicCsReq => {
             let cmd = command.parse_proto::<UnlockBackGroundMusicCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UnlockBackGroundMusicScRsp => {
             let cmd = command.parse_proto::<UnlockBackGroundMusicScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UnlockChatBubbleScNotify => {
             let cmd = command.parse_proto::<UnlockChatBubbleScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UnlockPhoneThemeScNotify => {
             let cmd = command.parse_proto::<UnlockPhoneThemeScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UnlockSkilltreeCsReq => {
             let cmd = command.parse_proto::<UnlockSkilltreeCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UnlockSkilltreeScRsp => {
             let cmd = command.parse_proto::<UnlockSkilltreeScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UpdateEnergyScNotify => {
             let cmd = command.parse_proto::<UpdateEnergyScNotify>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UpdateServerPrefsDataCsReq => {
             let cmd = command.parse_proto::<UpdateServerPrefsDataCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UpdateServerPrefsDataScRsp => {
             let cmd = command.parse_proto::<UpdateServerPrefsDataScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UseItemCsReq => {
             let cmd = command.parse_proto::<UseItemCsReq>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         command_id::UseItemScRsp => {
             let cmd = command.parse_proto::<UseItemScRsp>();
-            Some(cmd)
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
         }
         _ => None
     }
