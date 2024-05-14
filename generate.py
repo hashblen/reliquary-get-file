@@ -34,7 +34,9 @@ header = ("""use reliquary::network::GameCommand;\n"""
 function_header = ("""\npub fn print_command(command: GameCommand) {\n"""
                    """    match command.command_id {\n""")
  
-function_footer = ("""        _ => None\n"""
+function_footer = ("""        _ => {\n"""
+                   """            println!("Command not found");\n"""
+                   """        }\n"""
                    """    }\n"""
                    """}\n""")
  

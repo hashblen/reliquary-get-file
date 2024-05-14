@@ -1,4 +1,3 @@
-use std::any::Any;
 use reliquary::network::GameCommand;
 use reliquary::network::gen::command_id;
 use tracing::warn;
@@ -145,6 +144,8 @@ use reliquary::network::gen::proto::LockEquipmentCsReq::LockEquipmentCsReq;
 use reliquary::network::gen::proto::LockEquipmentScRsp::LockEquipmentScRsp;
 use reliquary::network::gen::proto::LockRelicCsReq::LockRelicCsReq;
 use reliquary::network::gen::proto::LockRelicScRsp::LockRelicScRsp;
+use reliquary::network::gen::proto::MarkAvatarCsReq::MarkAvatarCsReq;
+use reliquary::network::gen::proto::MarkAvatarScRsp::MarkAvatarScRsp;
 use reliquary::network::gen::proto::MarkReadMailCsReq::MarkReadMailCsReq;
 use reliquary::network::gen::proto::MarkReadMailScRsp::MarkReadMailScRsp;
 use reliquary::network::gen::proto::NewMailScNotify::NewMailScNotify;
@@ -1814,6 +1815,28 @@ pub fn print_command(command: GameCommand) {
         }
         command_id::LockRelicScRsp => {
             let cmd = command.parse_proto::<LockRelicScRsp>();
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
+        }
+        command_id::MarkAvatarCsReq => {
+            let cmd = command.parse_proto::<MarkAvatarCsReq>();
+            match cmd {
+                Ok(cmd) => {
+                    println!("{:?}", cmd);
+                }
+                Err(error) => {
+                    warn!(%error, "could not parse token command");
+                }
+            }
+        }
+        command_id::MarkAvatarScRsp => {
+            let cmd = command.parse_proto::<MarkAvatarScRsp>();
             match cmd {
                 Ok(cmd) => {
                     println!("{:?}", cmd);
